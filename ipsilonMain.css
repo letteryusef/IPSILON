@@ -1,0 +1,168 @@
+:root {
+    --global-dark-theme-color: #4D4D4D;
+    --global-light-theme-color: #F1F1F1;
+    --global-light-theme-lightness: 30%;
+    --global-dark-theme-lightness: 95%;
+
+    --global-bg: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b3f44a40177345.5774d6a230a32.gif);
+    --global-text-color: var(--global-dark-theme-color);
+    --global-content-bg-color: var(--global-light-theme-color);
+
+    --global-drawing-brightness: var(--global-light-theme-lightness);
+
+    --global-trans-speed: 0.3s;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+@property --pi-color {
+    syntax: "<color>";
+    initial-value: #F1F1F1;
+    inherits: false;
+}
+
+html, body {
+    margin: 0;
+    background: var(--global-bg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body {
+    cursor: default;
+}
+
+.pointer-text { 
+    cursor:pointer;
+    border-bottom: 1px dotted var(--global-text-color);
+    text-decoration: none;
+}
+
+.themeswitch {
+    background-color: var(--global-content-bg-color);
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1;
+    border-radius: 15px 15px 15px 15px;
+    transition: background-color var(--global-trans-speed) ease, top var(--global-trans-speed) ease, right var(--global-trans-speed) ease, margin-top var(--global-trans-speed) ease, margin-right var(--global-trans-speed) ease;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+
+.themeswitch:active:hover {
+    margin-top:2px;
+    margin-right:2px;
+}
+
+.themeswitch:active:hover .hover-icon {
+    width:16px;
+    height:16px;
+}
+
+.social-icon {
+    stroke:var(--global-text-color);
+    fill: transparent;
+    transition: fill var(--global-trans-speed) ease, stroke var(--global-trans-speed) ease;
+}
+
+.social-icon:hover {
+    fill: var(--global-text-color);
+}
+
+.hover-icon {
+    margin: 12px;
+    stroke: var(--global-text-color);
+    transition: fill var(--global-trans-speed) ease, width var(--global-trans-speed) ease, height var(--global-trans-speed) ease;
+}
+
+.themeswitch:hover {
+    top: 15px;
+    right: 25px;
+}
+
+.wrapper {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.stylish-image {
+    width: 88%;
+    border-radius: 15px 15px 15px 15px;
+    filter:grayscale(100%);
+}
+
+.drawing-image {
+    width: 88%;
+    border-radius: 15px 15px 15px 15px;
+    image-rendering: pixelated;
+    filter: brightness(var(--global-drawing-brightness));
+    transition: filter var(--global-trans-speed) ease;
+}
+
+.sep-sep {
+    width: 20%;
+    border-top: 1px solid var(--global-text-color);
+    margin-top:20px;
+    margin-bottom:20px;
+    transition: border-top var(--global-trans-speed) ease;
+}
+
+.cropped-content {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    max-width:700px;
+    min-height: 100vh;
+    background-color: var(--global-content-bg-color);
+    transition: background-color var(--global-trans-speed) ease;
+    z-index: 1;
+}
+
+.perspective {
+    margin-top:50px;
+    transform-origin: left;
+    transform: perspective(100px) rotateZ(-5deg) rotateX(4deg);
+}
+
+.morph-ascii {
+    font-size: 1.6vw;
+    color: var(--global-text-color);
+}
+
+.perspective-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    margin-left: -10px;
+    background: linear-gradient(to right, var(--pi-color), transparent);
+    --pi-color: var(--global-content-bg-color);
+    transition: --pi-color var(--global-trans-speed) ease;
+}
+
+.perspective h1 {
+    white-space: nowrap;
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+}
+
+.desc {
+    position: relative;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: var(--global-text-color);
+    transition: color var(--global-trans-speed) ease;
+    font-family: DM Sans;
+}
+
+@keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
