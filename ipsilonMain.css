@@ -40,6 +40,7 @@ body {
 .pointer-text { 
     cursor:pointer;
     border-bottom: 1px dotted var(--global-text-color);
+    transition: border-bottom var(--global-trans-speed) ease;
     text-decoration: none;
 }
 
