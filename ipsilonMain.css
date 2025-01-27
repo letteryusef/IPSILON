@@ -11,6 +11,8 @@
     --global-drawing-brightness: var(--global-light-theme-lightness);
 
     --global-trans-speed: 0.3s;
+
+    color-scheme: only light;
 }
 
 * {
