@@ -309,6 +309,7 @@ function loadTheme(arg, skipAnim) {
         anime({
             targets: '.hi-svg',
             d: arg ? sunPathSVG : moonPathSVG,
+            easing: "easeOutQuint",
             duration: 800
         });
     } else $(".hi-svg").attr("d", arg ? sunPathSVG : moonPathSVG);
@@ -335,11 +336,6 @@ $(document).ready(function(){
     initWavyTexts();
 
     $('.themeswitch').css('transform', 'translateY(-100px)');
-    anime({
-        targets: '.themeswitch',
-        translateY: "0px",
-        duration: 1000
-    });
 
     Array.from($(".wrapper").children()).forEach((el) => {
         $(el).css('opacity', "0%");
@@ -367,6 +363,11 @@ $(document).ready(function(){
             duration: 600,
             complete: function() {
                 $(".morph-div").remove();
+                anime({
+                  targets: '.themeswitch',
+                  translateY: "0px",
+                  duration: 1000
+                });
                 Array.from($(".wrapper").children()).forEach((el, ind) => {
                     anime({
                         targets: el,
@@ -423,6 +424,6 @@ $(document).ready(function(){
         });
 
         var postLink = "https://bsky.app/profile/letteryusef.bsky.social/post/" + recentPost.uri.split("/")[recentPost.uri.split("/").length - 1];
-        $(".news-marquee").html(`<a href=${postLink} style="text-decoration: none; color:var(--global-text-color); transition: color var(--global-trans-speed) ease;">* ཐི༏ཋྀ󠀮 BLUESKY RECENT POST: ${recentPost.record.text} (DATE: ${dateTimeFormat.format(postDate)} - LIKES: ${recentPost.likeCount} - REPOSTS: ${recentPost.repostCount} - REPLIES: ${recentPost.replyCount} - QUOTES: ${recentPost.quoteCount}) *</a>`);
+        $(".news-marquee").html(`<a href=${postLink} style="text-decoration: none; color:var(--global-text-color); transition: color var(--global-trans-speed) ease;">* ཐིཋྀ BLUESKY RECENT POST: ${recentPost.record.text} (DATE: ${dateTimeFormat.format(postDate)} - LIKES: ${recentPost.likeCount} - REPOSTS: ${recentPost.repostCount} - REPLIES: ${recentPost.replyCount} - QUOTES: ${recentPost.quoteCount}) *</a>`);
     });
 });

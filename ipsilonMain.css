@@ -11,9 +11,11 @@
     --global-drawing-brightness: var(--global-light-theme-lightness);
 
     --global-trans-speed: 0.3s;
-
-    color-scheme: only light;
 }
+
+@media (prefers-color-scheme: dark) { :root { color-scheme: light; } }
+@media (forced-colors: active) { :root { color-scheme: light; } }
+
 
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
