@@ -424,6 +424,6 @@ $(document).ready(function(){
         });
 
         var postLink = "https://bsky.app/profile/letteryusef.bsky.social/post/" + recentPost.uri.split("/")[recentPost.uri.split("/").length - 1];
-        $(".news-marquee").html(`<a href=${postLink} style="text-decoration: none; color:var(--global-text-color); transition: color var(--global-trans-speed) ease;">* ཐིཋྀ BLUESKY RECENT POST: ${recentPost.record.text} (DATE: ${dateTimeFormat.format(postDate)} - LIKES: ${recentPost.likeCount} - REPOSTS: ${recentPost.repostCount} - REPLIES: ${recentPost.replyCount} - QUOTES: ${recentPost.quoteCount}) *</a>`);
+        $(".news-marquee").html(`<a href=${postLink} style="text-decoration: none; color:var(--global-text-color); transition: color var(--global-trans-speed) ease;">* ཐི༏ཋྀ󠀮 BLUESKY RECENT POST: ${recentPost.record.text} (DATE: ${dateTimeFormat.format(postDate)} - LIKES: ${recentPost.likeCount} - REPOSTS: ${recentPost.repostCount} - REPLIES: ${recentPost.replyCount} - QUOTES: ${recentPost.quoteCount}) *</a>`);
     });
 });
