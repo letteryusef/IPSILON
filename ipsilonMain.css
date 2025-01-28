@@ -13,8 +13,8 @@
     --global-trans-speed: 0.3s;
 }
 
-@media (prefers-color-scheme: dark) { :root { color-scheme: light; } }
-@media (forced-colors: active) { :root { color-scheme: light; } }
+@media (prefers-color-scheme: dark) { :root { color-scheme: only light; } }
+@media (forced-colors: active) { :root { color-scheme: only light; } }
 
 .grain {
     display:block;
