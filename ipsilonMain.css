@@ -26,7 +26,6 @@
     animation: animateGrain 4s steps(10) infinite;
     top: 0;
     z-index:99;
-    touch-action: none;
 }
 
 @keyframes animateGrain{
