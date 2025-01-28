@@ -315,6 +315,7 @@ function loadTheme(arg, skipAnim) {
     } else $(".hi-svg").attr("d", arg ? sunPathSVG : moonPathSVG);
     $(':root').css('--global-text-color', arg ? 'var(--global-dark-theme-color)' : 'var(--global-light-theme-color)');
     $(':root').css('--global-content-bg-color', arg ? 'var(--global-light-theme-color)' : 'var(--global-dark-theme-color)');
+    $(':root').css('--global-content-bg-color-alpha', arg ? 'var(--global-light-theme-transparent-color)' : 'var(--global-dark-theme-transparent-color)');
     $(':root').css('--global-drawing-brightness', arg ? 'var(--global-light-theme-lightness)' : 'var(--global-dark-theme-lightness)');
 }
 

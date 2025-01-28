@@ -1,12 +1,15 @@
 :root {
     --global-dark-theme-color: #4D4D4D;
     --global-light-theme-color: #F1F1F1;
+    --global-dark-theme-transparent-color: rgba(77, 77, 77, 0.6);
+    --global-light-theme-transparent-color: rgba(241, 241, 241, 0.6);
     --global-light-theme-lightness: 30%;
     --global-dark-theme-lightness: 95%;
 
     --global-bg: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b3f44a40177345.5774d6a230a32.gif);
     --global-text-color: var(--global-dark-theme-color);
     --global-content-bg-color: var(--global-light-theme-color);
+    --global-content-bg-color-alpha: var(--global-light-theme-transparent-color);
 
     --global-drawing-brightness: var(--global-light-theme-lightness);
 
@@ -80,14 +83,15 @@ body {
 }
 
 .themeswitch {
-    background-color: var(--global-content-bg-color);
+    background-color: var(--global-content-bg-color-alpha);
+    backdrop-filter: blur(2px);
     position: fixed;
     top: 10px;
     right: 20px;
     z-index: 1;
     border-radius: 15px 15px 15px 15px;
     transition: background-color var(--global-trans-speed) ease, top var(--global-trans-speed) ease, right var(--global-trans-speed) ease, margin-top var(--global-trans-speed) ease, margin-right var(--global-trans-speed) ease;
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    box-shadow: 0 0px 34px rgba(0, 0, 0, 0.6);
     cursor: pointer;
 }
 
@@ -114,7 +118,7 @@ body {
 .hover-icon {
     margin: 12px;
     stroke: var(--global-text-color);
-    transition: fill var(--global-trans-speed) ease, width var(--global-trans-speed) ease, height var(--global-trans-speed) ease;
+    transition: fill var(--global-trans-speed) ease, stroke var(--global-trans-speed) ease, width var(--global-trans-speed) ease, height var(--global-trans-speed) ease;
 }
 
 .themeswitch:hover {
