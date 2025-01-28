@@ -26,6 +26,7 @@
     animation: animateGrain 4s steps(10) infinite;
     top: 0;
     z-index:99;
+    pointer-events:none;
 }
 
 @keyframes animateGrain{
