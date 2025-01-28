@@ -22,7 +22,7 @@
     height: 300%;
     width: 300%;
     position: fixed;
-    opacity:0.06;
+    opacity:0.08;
     animation: animateGrain 4s steps(10) infinite;
     top: 0;
     z-index:99;
